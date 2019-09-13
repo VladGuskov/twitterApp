@@ -1,4 +1,4 @@
-package vladeater.controller;
+package vladeater.util;
 
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -10,8 +10,8 @@ import java.util.stream.Collectors;
 /**
  * @author Vlados Guskov
  */
-class ControllerUtils {
-    static Map<String, String> getErrors(BindingResult bindingResult) {
+public class ControllerUtils {
+    public static Map<String, String> getErrors(BindingResult bindingResult) {
         Collector<FieldError, ?, Map<String, String>> collector = Collectors.toMap(
                 fieldError -> fieldError.getField() + "Error",
                 FieldError::getDefaultMessage
